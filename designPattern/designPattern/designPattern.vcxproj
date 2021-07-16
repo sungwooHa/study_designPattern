@@ -124,6 +124,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Member.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DateDef.h" />
+    <ClInclude Include="Member.h" />
+    <ClInclude Include="MemberFactory.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
