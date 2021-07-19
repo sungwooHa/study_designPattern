@@ -7,32 +7,20 @@ using namespace std;
 class MemberFactory
 {
 public:
-	virtual Member* CreateMember() { assert(false); return new Member(); };
+	std::unique_ptr<Member> CreateMember(MemberType memberType)
+	{
+		switch (memberType)
+		{
+		case MemberType::concreate: return std::make_unique<Concreate>();
+		case MemberType::steel:return std::make_unique<Steel>();
+		case MemberType::rebar:return  std::make_unique<Rebar>(); 
+		case MemberType::stiffener:return std::make_unique<Stiffener>();
+			break;
+		case MemberType::none: [[fallthrough]];
+		default:
+			break;
+		}
+		return nullptr;
+	}
 private:
 };
-
-class ConcreateFactory : public MemberFactory
-{
-public:
-	virtual Concreate* CreateMember() { return new Concreate(); }
-};
-
-
-class SteelFactory : public MemberFactory
-{
-public:
-	virtual Steel* CreateMember() { return new Steel(); }
-};
-
-class RebarFactory : public MemberFactory
-{
-public:
-	virtual Rebar* CreateMember() { return new Rebar(); }
-};
-
-class StiffenerFactory : public MemberFactory
-{
-public:
-	virtual Stiffener* CreateMember() { return new Stiffener(); }
-};
-

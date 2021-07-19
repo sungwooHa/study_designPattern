@@ -1,7 +1,11 @@
 #include <iostream>
+#include "FactoryMethodMain.h"
+
+using namespace std;
+
 
 int main()
 {
-	std::cout << "Hello world" << std::endl;
+	FactoryMethodMain::Drive();
 	return 0;
 }
