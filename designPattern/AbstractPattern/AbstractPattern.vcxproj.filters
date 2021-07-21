@@ -1,2 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" />
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="define">
+      <UniqueIdentifier>{bb33c828-7b9e-4c50-a2d1-d42aa264a02b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SubSet">
+      <UniqueIdentifier>{7bbef7cd-ec8a-4978-9ee2-d7112488c76a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MainFeature">
+      <UniqueIdentifier>{768359a9-b32b-49c5-a474-725ff78d43cb}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="UnitProperty.h">
+      <Filter>SubSet</Filter>
+    </ClInclude>
+    <ClInclude Include="SubSetProperty.h">
+      <Filter>SubSet</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
