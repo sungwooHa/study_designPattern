@@ -15,11 +15,11 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="UnitProperty.h">
+    <ClInclude Include="Equipment.h">
       <Filter>SubSet</Filter>
     </ClInclude>
-    <ClInclude Include="SubSetProperty.h">
-      <Filter>SubSet</Filter>
+    <ClInclude Include="Soldier.h">
+      <Filter>MainFeature</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
