@@ -30,6 +30,7 @@ public:
 
 	virtual ~GroupPhase() {};
 	virtual void Initialize() override { std::cout << "Initilize Group Phase" << std::endl; };
+	
 	void Add(std::shared_ptr<Phase> child) 
 	{
 		for (auto itr = children.begin(); itr != children.end(); ++itr)
@@ -42,6 +43,18 @@ public:
 		}
 		children.push_back(child); 
 	}
+	
+	void Delete(std::string name)
+	{
+		for (auto itr = children.begin(); itr != children.end(); ++itr)
+		{
+			if (itr->get()->GetName() == name)
+			{
+				itr = children.erase(itr);
+				break;
+			}
+		}
+	};
 
 	void ShowTree()
 	{
@@ -55,18 +68,6 @@ public:
 				std::cout << child->GetName() << std::endl;
 		}
 	}
-
-	void Delete(std::string name)
-	{
-		for (auto itr = children.begin(); itr != children.end(); ++itr)
-		{
-			if (itr->get()->GetName() == name)
-			{
-				itr = children.erase(itr);
-				break;
-			}
-		}
-	};
 
 protected:
 	std::vector<std::shared_ptr<Phase>> children;
